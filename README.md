@@ -1,5 +1,5 @@
 # Kubernetes-key-commands
-These are the KEY commands used in Kubernetes and might also be very  useful in CKA/CKAD/CKS exams. Please note that these notes are written keeping Beginners as well in mind for an easier underdstanding.
+These are the KEY commands used in Kubernetes and might also be very  useful in CKA/CKAD/CKS exams. Please note that these notes are written keeping Beginners as well in mind for an easier understanding.
 
 PODS - commands 1.20 onwards
 
