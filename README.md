@@ -54,10 +54,10 @@ Follwing command is to EDIT the pod.
     
 However, we CANNOT edit specifications of an existing POD other than the below.
 
-    spec.containers[*].image
-	  spec.initContainers[*].image
-	  spec.activeDeadlineSeconds
-	  spec.tolerations
+	spec.containers[*].image
+	spec.initContainers[*].image
+	spec.activeDeadlineSeconds
+	spec.tolerations
 
 If it's really required to EDIT them, any of the following 2 options can be used:
 Option 1: Edit / save yaml file on temp:
@@ -66,6 +66,10 @@ Option 1: Edit / save yaml file on temp:
     kubectl delete pod <pod name>                       [Step 2]
     kubectl create -f /tmp/kubectl-edit-mk8svb.yaml     [Step 3 - This tmp path will be shown on the terminal once an error message shows after unsuccessful EDIT command. This tmp path will be different in different terminals/machines]
 
-       
-       
+Option 2: Extract the pod definition in YAML format to a file using the command:      
+
+	kubectl get pod <pod name> -o yaml > pod-name.yaml  	[Step 1]
+	vi pod-name.yaml					[Step 2]
+	kubectl delete pod <pod name>				[Step 3 - For an immediate deletion of pod use   kubectl delete pod <pod name> --force --grace-period=0] NOTE: For exams like CKA, we can create shortcut as deleting/termination of pod might take too long -->    export kdp='kubectl delete pod --force --grace-period=0'  this will create a shortcut and can be used as    $kdp <pod name>
+	kubectl create -f pod-name.yaml				[Step 4]
     
